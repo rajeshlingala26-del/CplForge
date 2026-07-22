@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — CPLForge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E63329; --red-dark:#C4271E;
+    --blue:#0B4FC4; --blue-deep:#083C99; --blue-ink:#062C71;
+    --cream:#FBF7F0; --cream-2:#F1ECE2;
+    --ink:#1E2532; --mute:#6B7280; --mute-light:#B8C6E4;
+    --line:rgba(255,255,255,.14); --line-dark:#E4DED2;
+    --maxw:1140px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  .display{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.015em;line-height:1.08}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:13px;font-weight:600;padding:15px 28px;border:0;cursor:pointer;border-radius:3px;transition:background .2s ease,transform .2s ease}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-dark);transform:translateY(-1px)}
+  .btn-call{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px #C9C2B4}
+  .btn-call:hover{background:var(--ink);color:#fff;box-shadow:inset 0 0 0 1px var(--ink)}
+
+  .top{padding:22px 0}
+  .top .wrap{display:flex;align-items:center}
+  .brand{display:inline-flex;align-items:center;gap:9px}
+  .brand-mark{width:32px;height:32px;border-radius:3px;background:var(--ink);display:flex;align-items:center;justify-content:center}
+  .brand-mark span{color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:15px}
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--ink)}
+  .brand-name b{color:var(--red)}
+
+  main{flex:1;display:flex;align-items:center;padding:40px 0 80px}
+  .card{max-width:640px;margin:0 auto;text-align:center}
+  .check{width:72px;height:72px;border-radius:50%;background:var(--blue-ink);display:flex;align-items:center;justify-content:center;margin:0 auto 28px}
+  .check svg{width:32px;height:32px}
+  .eyebrow{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px}
+  .eyebrow::before,.eyebrow::after{content:"";width:24px;height:1px;background:var(--red)}
+  h1{font-size:clamp(30px,4.4vw,46px);margin-bottom:16px;letter-spacing:-.02em}
+  h1 .blue{color:var(--blue)}
+  .sub{font-size:15.5px;color:var(--mute);line-height:1.8;max-width:46ch;margin:0 auto 40px}
+  .sub b{color:var(--ink);font-weight:600}
+
+  .steps{text-align:left;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:28px 0;margin-bottom:40px}
+  .step{display:flex;gap:16px;margin-bottom:20px}
+  .step:last-child{margin-bottom:0}
+  .step-n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--blue-ink);color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+  .step-t{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+  .step-d{font-size:13px;color:var(--mute);line-height:1.6}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+
+  footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--mute);border-top:1px solid var(--line-dark)}
+  footer a{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a href="cplforge.html" class="brand">
+      <span class="brand-mark"><span>C</span></span>
+      <span class="brand-name">CPL<b>Forge</b></span>
+    </a>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="card">
+      <div class="check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <p class="eyebrow">Request received</p>
+      <h1 class="display">Thank you — your audit is <span class="blue">on its way.</span></h1>
+      <p class="sub">We've got your details and we're already looking at your Google Ads, Meta Ads, and LinkedIn Ads setup. <b>Expect your free, itemised audit within 48 hours</b> — no spam, no sales pressure.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div>
+            <div class="step-t">We review your account</div>
+            <div class="step-d">Our specialist looks at spend, targeting, and conversion tracking — not just the surface numbers.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div>
+            <div class="step-t">You get a WhatsApp message</div>
+            <div class="step-d">We'll message you directly on WhatsApp to confirm a few details and share the audit.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div>
+            <div class="step-t">We walk you through it live</div>
+            <div class="step-d">A short call to explain what we found and what we'd change first — whether or not you hire us.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a href="https://wa.me/918790282479?text=Hi%2C%20I%20just%20submitted%20my%20audit%20request." target="_blank" rel="noopener" class="btn btn-red">Message us on WhatsApp</a>
+        <a href="cplforge.html" class="btn btn-call">Back to homepage</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Questions? Email <a href="mailto:rajesh.lingala26@gmail.com">rajesh.lingala26@gmail.com</a> or call <a href="tel:+918790282479">+91 87902 82479</a></p>
+</footer>
+
+</body>
+</html>
