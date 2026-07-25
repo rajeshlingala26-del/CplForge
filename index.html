@@ -331,6 +331,18 @@
   .cp-item{display:flex;align-items:center;gap:12px;font-size:13.5px}
   .cp-item .dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
   .form-card{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid var(--line-dark);border-radius:10px;padding:30px}
+  .form-success{display:none;text-align:center;padding:6px 4px}
+  .fs-check{width:64px;height:64px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-size:28px}
+  .form-success h3{font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:#fff;line-height:1.3;margin-bottom:14px}
+  .form-success h3 span{color:#F5A623}
+  .form-success > p{font-size:13.5px;color:var(--mute-light);line-height:1.8;max-width:38ch;margin:0 auto 26px}
+  .form-success > p b{color:#F5A623;font-weight:600}
+  .fs-next{background:rgba(255,255,255,.05);border:1px solid var(--line-dark);border-radius:10px;padding:22px 22px 4px;text-align:left;margin-bottom:24px}
+  .fs-next-label{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F5A623;margin-bottom:16px}
+  .fs-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+  .fs-step i{flex:none;width:24px;height:24px;border-radius:50%;background:#F5A623;color:#1a1400;font-style:normal;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .fs-step p{font-size:13px;color:var(--mute-light);margin:0;line-height:1.6}
+  .fs-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
   .f-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .f{margin-bottom:14px}
   .f label{display:block;font-size:12px;font-weight:600;margin-bottom:6px}
@@ -771,14 +783,11 @@
     </div>
     <div class="form-card rv">
       <form id="leadForm">
-        <div class="f-grid2">
-          <div class="f"><label for="fname">Name *</label><input id="fname" name="Name" type="text" placeholder="Your name" required></div>
-          <div class="f"><label for="fcompany">Company name *</label><input id="fcompany" name="Company" type="text" placeholder="Your Company Pvt Ltd" required></div>
-        </div>
-        <div class="f-grid2">
-          <div class="f"><label for="fphone">Phone *</label><input id="fphone" name="Phone" type="tel" placeholder="+91 87902 82479" required></div>
-          <div class="f"><label for="femail">Email *</label><input id="femail" name="Email" type="email" placeholder="you@company.com" required></div>
-        </div>
+        <div class="f"><label for="fname">Name *</label><input id="fname" name="Name" type="text" placeholder="Your name" required></div>
+        <div class="f"><label for="fcompany">Company name *</label><input id="fcompany" name="Company" type="text" placeholder="Your Company Pvt Ltd" required></div>
+        <div class="f"><label for="fphone">Phone *</label><input id="fphone" name="Phone" type="tel" placeholder="+91 87902 82479" required></div>
+        <div class="f"><label for="femail">Email *</label><input id="femail" name="Email" type="email" placeholder="you@company.com" required></div>
+        <div class="f"><label for="fcity">City / Service Area</label><input id="fcity" name="City / Service Area" type="text" placeholder="e.g. Hyderabad, Mumbai, Delhi"></div>
         <div class="f"><label for="fgoal">Service needed</label>
           <select id="fgoal" name="Service needed">
             <option value="">Select a service</option>
@@ -796,6 +805,21 @@
         <button type="submit" class="btn btn-blue">Send Me My Free Audit →</button>
         <p class="assure">No spam. We will get back to you within 48 hours on WhatsApp.</p>
       </form>
+      <div class="form-success" id="formSuccess">
+        <div class="fs-check">✓</div>
+        <h3>You're All Set,<br><span>We'll Be in Touch!</span></h3>
+        <p>Thank you for requesting your Free Audit. Our team will personally review your details and reach out within <b>48 hours on WhatsApp</b>.</p>
+        <div class="fs-next">
+          <div class="fs-next-label">What happens next</div>
+          <div class="fs-step"><i>1</i><p>We review your business details and current ad performance within 48 hours.</p></div>
+          <div class="fs-step"><i>2</i><p>You receive a WhatsApp message to schedule your free strategy call.</p></div>
+          <div class="fs-step"><i>3</i><p>We share a detailed audit report — what's working, what's not, and your growth plan.</p></div>
+        </div>
+        <div class="fs-btns">
+          <a href="https://wa.me/918790282479" class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp Us Now</a>
+          <a href="#top" class="btn btn-line" id="fsBackHome">← Back to Home</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -944,14 +968,25 @@
         body: new FormData(form)
       });
       if (!res.ok) throw new Error('Request failed');
-      alert("Thanks! We've received your details and will reach out on WhatsApp within 48 hours.");
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
       form.reset();
     } catch (err) {
       alert("Sorry, something went wrong sending your details. Please WhatsApp or call us directly instead.");
-    } finally {
       btn.disabled = false;
       btn.textContent = originalLabel;
     }
+  });
+
+  document.getElementById('fsBackHome').addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById('formSuccess').style.display = 'none';
+      const form = document.getElementById('leadForm');
+      form.style.display = '';
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = false;
+      btn.textContent = 'Send Me My Free Audit →';
+    }, 400);
   });
 </script>
 </body>
